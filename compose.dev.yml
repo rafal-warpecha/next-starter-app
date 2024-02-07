@@ -1,0 +1,27 @@
+services:
+
+  app:
+    container_name: app
+    build:
+      context: .
+      target: development
+    command: pnpm dev
+    develop:
+      watch:
+        - action: sync
+          path: ./src
+          target: /app/src
+          ignore:
+            - node_modules/
+        - action: rebuild
+          path: pnpm-lock.yaml
+    environment:
+      - NODE_ENV=development
+      - WDS_SOCKET_HOST=127.0.0.1
+    volumes:
+      - /app/.next
+    ports:
+      - 3000:3000
+
+volumes:
+  postgres_db_volume:

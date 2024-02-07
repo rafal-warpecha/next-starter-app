@@ -1,0 +1,29 @@
+#editor
+.idea/
+
+# next.js
+/.next/
+
+# dependencies
+/node_modules
+
+# production
+/build
+
+# dev config
+.eslintrc.json
+.gitignore
+.prettierrc.js
+README.md
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+pnpm-debug.log*
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
