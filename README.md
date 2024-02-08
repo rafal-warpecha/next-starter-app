@@ -23,8 +23,10 @@ To get a development environment operational:
 
 1. Run `docker compose -f compose.dev.yml watch`.
 2. Open [localhost:3000](http://localhost:3000/)
+3. To access PgAdmin open [localhost:5050](http://localhost:5050/)
 
 Thanks to Docker compose watch option your project is in sync with the running container (with hot reloading).
+If you want to connect to databse from host simply add `127.0.0.1 app-database` to your hosts file.
 
 ### Building
 
