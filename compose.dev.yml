@@ -4,7 +4,7 @@ services:
     build:
       context: .
       target: development
-    command: pnpm dev
+    command: pnpm app:dev
     develop:
       watch:
         - action: sync
@@ -14,6 +14,9 @@ services:
             - node_modules/
         - action: rebuild
           path: pnpm-lock.yaml
+        - action: sync+restart
+          path: prisma/schema.prisma
+          target: /app/prisma/schema.prisma
     environment:
       - NODE_ENV=development
       - WDS_SOCKET_HOST=127.0.0.1
@@ -21,6 +24,7 @@ services:
       - /app/.next
     ports:
       - 3000:3000
+      - 5555:5555
     depends_on:
       - database
 
