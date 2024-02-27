@@ -1,9 +1,5 @@
 {
-    "plugins": [
-        "prettier",
-        "simple-import-sort",
-        "unused-imports"
-    ],
+    "plugins": ["prettier", "simple-import-sort", "unused-imports"],
     "extends": ["next/core-web-vitals", "plugin:prettier/recommended"],
     "rules": {
         "prettier/prettier": "error",
@@ -12,24 +8,13 @@
             {
                 "groups": [
                     // React first, then next, then packages starting with a character, then packages starting with @
-                    [
-                        "^react$",
-                        "^next$",
-                        "^[a-z]",
-                        "^@.*"
-                    ],
+                    ["^react$", "^next$", "^[a-z]", "^@.*"],
                     // Imports starting with `../`
-                    [
-                        "^..\/.*"
-                    ],
+                    ["^../.*"],
                     // Imports starting with `./`
-                    [
-                        "^.\/.*"
-                    ],
+                    ["^./.*"],
                     // Side effect imports
-                    [
-                        "^\u0000"
-                    ]
+                    ["^\u0000"]
                 ]
             }
         ]
