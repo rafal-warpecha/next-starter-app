@@ -1,9 +1,11 @@
 # Next.js starter app.
 
 ## Brief Description
-This is a starter application engineered to simplify the development process by integrating some of the most effective, industry-leading technologies. It combines the server-side rendering and static-site generation capabilities of Next.js with the powerful, open-source Prisma ORM. Prisma provides an efficient, type-safe database layer to interface with PostgreSQL. 
+
+This is a starter application engineered to simplify the development process by integrating some of the most effective, industry-leading technologies. It combines the server-side rendering and static-site generation capabilities of Next.js with the powerful, open-source Prisma ORM. Prisma provides an efficient, type-safe database layer to interface with PostgreSQL.
 
 ## Getting Started
+
 These instructions will allow you to get a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
@@ -42,4 +44,4 @@ Always welcome.
 
 ## Authors
 
-- Rafał Warpecha
+-   Rafał Warpecha

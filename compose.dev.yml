@@ -1,54 +1,54 @@
 services:
-  app:
-    container_name: app
-    build:
-      context: .
-      target: development
-    command: pnpm app:dev
-    develop:
-      watch:
-        - action: sync
-          path: ./src
-          target: /app/src
-          ignore:
-            - node_modules/
-        - action: rebuild
-          path: pnpm-lock.yaml
-        - action: sync+restart
-          path: prisma/schema.prisma
-          target: /app/prisma/schema.prisma
-    environment:
-      - NODE_ENV=development
-      - WDS_SOCKET_HOST=127.0.0.1
-    volumes:
-      - /app/.next
-    ports:
-      - 3000:3000
-      - 5555:5555
-    depends_on:
-      - database
+    app:
+        container_name: app
+        build:
+            context: .
+            target: development
+        command: pnpm app:dev
+        develop:
+            watch:
+                - action: sync
+                  path: ./src
+                  target: /app/src
+                  ignore:
+                      - node_modules/
+                - action: rebuild
+                  path: pnpm-lock.yaml
+                - action: sync+restart
+                  path: prisma/schema.prisma
+                  target: /app/prisma/schema.prisma
+        environment:
+            - NODE_ENV=development
+            - WDS_SOCKET_HOST=127.0.0.1
+        volumes:
+            - /app/.next
+        ports:
+            - 3000:3000
+            - 5555:5555
+        depends_on:
+            - database
 
-  database:
-    container_name: app-database
-    image: postgres
-    restart: always
-    env_file:
-      - ./.env.development
-    ports:
-      - 5432:5432
-    volumes:
-      - postgres_db_volume:/var/lib/postgresql/data
+    database:
+        container_name: app-database
+        image: postgres
+        restart: always
+        env_file:
+            - ./.env.development
+        ports:
+            - 5432:5432
+        volumes:
+            - postgres_db_volume:/var/lib/postgresql/data
 
-  database-admin:
-    container_name: app-database-admin
-    image: dpage/pgadmin4
-    restart: always
-    env_file:
-      - ./.env.development
-    ports:
-      - 5050:80
-    depends_on:
-      - database
+    database-admin:
+        container_name: app-database-admin
+        image: dpage/pgadmin4
+        restart: always
+        env_file:
+            - ./.env.development
+        ports:
+            - 5050:80
+        depends_on:
+            - database
 
 volumes:
-  postgres_db_volume:
+    postgres_db_volume:

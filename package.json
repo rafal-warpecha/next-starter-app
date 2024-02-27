@@ -4,7 +4,6 @@
     "private": true,
     "scripts": {
         "app:prettier": "pnpm prettier . --write",
-        "app:prettier:ci": "pnpm prettier .",
         "app:eslint": "pnpm eslint . --fix",
         "app:eslint:ci": "pnpm eslint .",
         "app:dev": "pnpm db:push:dev && pnpm db:studio & next dev",
