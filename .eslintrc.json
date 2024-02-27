@@ -11,31 +11,24 @@
             "error",
             {
                 "groups": [
-                    // React first, then packages starting with a character, then packages starting with @
+                    // React first, then next, then packages starting with a character, then packages starting with @
                     [
                         "^react$",
+                        "^next$",
                         "^[a-z]",
                         "^@.*"
                     ],
                     // Imports starting with `../`
                     [
-                        "^\\.\\.(?!/?$)",
-                        "^\\.\\./?$"
+                        "^..\/.*"
                     ],
                     // Imports starting with `./`
                     [
-                        "^\\./(?=.*/)(?!/?$)",
-                        "^\\.(?!/?$)",
-                        "^\\./?$"
+                        "^.\/.*"
                     ],
                     // Side effect imports
                     [
-                        "^\\u0000",
-                        "^\\u0000.*\u0000$"
-                    ],
-                    // Style imports
-                    [
-                        "^.+\\.s?css$"
+                        "^\u0000"
                     ]
                 ]
             }
